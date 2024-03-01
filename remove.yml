@@ -4,16 +4,10 @@
   become: true
   tasks:
  
-  - name: Update repository
-    apt: 
-      update_cache: yes
  
-  - name: Install apache2 package
+  - name: Remove apache2 package
     apt:
-      name: apache2
-      state: absent
-
-  - name: add php support for apache
-    apt:
-      name: libapache2-mod-php
+      name: 
+      - apache2
+      - libapache2-mod-php
       state: absent
